@@ -1,345 +1,195 @@
 // Define arrays of meal options with recipes for different diets
 const breakfastOptions = {
     standard: [
-        { meal: "Oatmeal with fruits", recipe: "Cook oats with water, add fruits like bananas and berries, top with honey or maple syrup." },
-        { meal: "Avocado toast", recipe: "Toast bread, spread mashed avocado on top, sprinkle with salt and pepper, drizzle with olive oil." },
-        { meal: "Greek yogurt with berries", recipe: "Mix Greek yogurt with fresh berries like strawberries, blueberries, and raspberries, add a drizzle of honey." },
-        { meal: "Smoothie bowl", recipe: "Blend frozen fruits like bananas and berries with yogurt or milk until smooth, pour into a bowl and top with granola, nuts, and fruits." },
-        { meal: "Eggs and toast", recipe: "Fry or scramble eggs, serve with toasted bread, optionally spread with butter or jam." },
-        { meal: "Pancakes with syrup", recipe: "Mix flour, eggs, milk, and baking powder to make pancake batter. Cook pancakes on a griddle, serve with syrup." }
+        { meal: "Oatmeal with fruits", recipe: "Cook 1 cup oats with 2 cups water. Add fruits like bananas and berries, and top with 1 tablespoon honey or maple syrup." },
+        { meal: "Avocado toast", recipe: "Toast 2 slices of whole grain bread. Spread 1 mashed avocado on top, sprinkle with salt and pepper, and drizzle with olive oil." },
+        { meal: "Greek yogurt with berries", recipe: "Mix 1 cup Greek yogurt with 1/2 cup fresh berries like strawberries, blueberries, and raspberries. Add 1 tablespoon honey." },
+        { meal: "Smoothie bowl", recipe: "Blend 1 frozen banana, 1 cup frozen berries, and 1/2 cup yogurt or milk until smooth. Pour into a bowl and top with granola, nuts, and fruits." },
+        { meal: "Eggs and toast", recipe: "Fry or scramble 2 eggs. Serve with 2 slices of toasted bread, optionally spread with butter or jam." },
+        { meal: "Pancakes with syrup", recipe: "Mix 1 cup flour, 1 egg, 1 cup milk, and 1 teaspoon baking powder to make pancake batter. Cook pancakes on a griddle and serve with syrup." },
+        { meal: "Banana smoothie", recipe: "Blend 1 banana, 1 cup milk, 1 tablespoon peanut butter, and 1 tablespoon honey until smooth." },
+        { meal: "Breakfast burrito", recipe: "Scramble 2 eggs with 1/4 cup diced bell peppers and onions. Wrap in a tortilla with 1/4 cup shredded cheese and salsa." },
+        { meal: "French toast", recipe: "Whisk 2 eggs with 1/2 cup milk and 1 teaspoon cinnamon. Dip 2 slices of bread in the mixture and cook on a griddle until golden brown." },
+        { meal: "Veggie omelette", recipe: "Whisk 2 eggs and pour into a hot pan. Add 1/4 cup diced tomatoes, bell peppers, and spinach. Cook until eggs are set." },
+        { meal: "Muesli with fruits", recipe: "Combine 1 cup rolled oats, 1/4 cup nuts, 1/4 cup dried fruits, and 1 cup yogurt. Serve with fresh fruits." },
+        { meal: "Chia seed pudding", recipe: "Mix 3 tablespoons chia seeds with 1 cup almond milk and 1 tablespoon honey. Refrigerate overnight and top with fresh fruits." },
+        { meal: "Bagel with cream cheese", recipe: "Toast a bagel and spread with 2 tablespoons cream cheese. Top with sliced cucumbers and tomatoes." },
+        { meal: "Quinoa breakfast bowl", recipe: "Cook 1/2 cup quinoa with 1 cup water. Top with 1/4 cup nuts, 1/4 cup dried fruits, and 1 tablespoon honey." },
+        { meal: "Granola parfait", recipe: "Layer 1 cup Greek yogurt with 1/2 cup granola and 1/2 cup fresh berries in a glass." },
+        { meal: "Apple cinnamon oatmeal", recipe: "Cook 1 cup oats with 2 cups water and 1 diced apple. Add 1 teaspoon cinnamon and 1 tablespoon honey." },
+        { meal: "Breakfast sandwich", recipe: "Fry 1 egg and place on an English muffin with 1 slice of cheese and 1 slice of ham or turkey." },
+        { meal: "Tofu scramble", recipe: "Crumble 1/2 block of tofu and stir-fry with 1/4 cup diced bell peppers, onions, and spinach. Season with turmeric and salt." },
+        { meal: "Egg muffins", recipe: "Whisk 6 eggs and pour into muffin tins. Add diced vegetables and cheese. Bake at 350°F for 20 minutes." },
+        { meal: "Breakfast pizza", recipe: "Top a pizza crust with scrambled eggs, diced vegetables, and cheese. Bake at 400°F for 10 minutes." }
     ],
-    keto: [
-        { meal: "Egg muffins with cheese and spinach", recipe: "Whisk eggs, cheese, and spinach together, pour into muffin tins, bake until set." },
-        { meal: "Bacon and eggs", recipe: "Fry bacon until crispy, cook eggs as desired (scrambled, fried, or poached)." },
-        { meal: "Chia seed pudding", recipe: "Mix chia seeds with almond milk, sweeten with a keto-friendly sweetener, refrigerate until thickened." },
-        { meal: "Avocado and smoked salmon", recipe: "Slice avocado, top with smoked salmon, sprinkle with salt and pepper, drizzle with olive oil." },
-        { meal: "Coconut flour pancakes", recipe: "Combine coconut flour, eggs, and almond milk to make batter. Cook pancakes on a griddle, serve with butter." }
-    ],
-    mediterranean: [
-        { meal: "Mediterranean omelette", recipe: "Whisk eggs, tomatoes, olives, and feta cheese together, cook in a pan until eggs are set." },
-        { meal: "Greek yogurt with honey and nuts", recipe: "Mix Greek yogurt with honey, top with nuts like almonds or walnuts." },
-        { meal: "Muesli with fruits", recipe: "Combine oats, nuts, seeds, and dried fruits. Serve with Greek yogurt and fresh fruits." },
-        { meal: "Hummus and veggies", recipe: "Serve hummus with fresh vegetables like cucumbers, carrots, and bell peppers." },
-        { meal: "Caprese salad", recipe: "Layer slices of tomatoes, mozzarella cheese, and basil leaves. Drizzle with olive oil and balsamic vinegar." },
-        { meal: "Whole grain toast with olive oil and tomato", recipe: "Toast whole grain bread, drizzle with olive oil, top with sliced tomatoes and sprinkle with salt and pepper." }
-    ],
-    carnivore: [
-        { meal: "Steak and eggs", recipe: "Grill steak to desired doneness, serve with scrambled or fried eggs." },
-        { meal: "Chicken thighs with roasted vegetables", recipe: "Season chicken thighs, roast in the oven with vegetables like carrots and potatoes." },
-        { meal: "Beef burger (no bun)", recipe: "Grill beef patties, serve without a bun, optionally top with cheese, lettuce, and tomato." },
-        { meal: "Pork chops with salad", recipe: "Season pork chops, grill or bake until cooked through, serve with a side salad." },
-        { meal: "Ground beef stir-fry", recipe: "Stir-fry ground beef with vegetables like bell peppers, onions, and broccoli, season with soy sauce." }
-    ],
-    lowCarb: [
-        { meal: "Zucchini noodles with pesto", recipe: "Spiralize zucchini into noodles, toss with pesto sauce made from basil, pine nuts, and olive oil." },
-        { meal: "Cauliflower fried rice", recipe: "Grate cauliflower into rice-sized pieces, stir-fry with vegetables, eggs, and soy sauce." },
-        { meal: "Spinach and feta omelette", recipe: "Whisk eggs, spinach, and feta cheese together, cook in a pan until eggs are set." },
-        { meal: "Grilled chicken with green beans", recipe: "Grill chicken breasts, serve with steamed green beans tossed in olive oil and lemon juice." },
-        { meal: "Salmon with asparagus", recipe: "Bake or grill salmon fillets, serve with roasted asparagus, drizzle with olive oil and sprinkle with salt and pepper." }
-    ],
-    pescatarian: [
-        { meal: "Grilled salmon with quinoa", recipe: "Grill salmon fillets, serve with cooked quinoa seasoned with herbs and lemon juice." },
-        { meal: "Tuna salad with avocado", recipe: "Mix canned tuna with mashed avocado, serve on top of salad greens." },
-        { meal: "Shrimp stir-fry with veggies", recipe: "Stir-fry shrimp with vegetables like bell peppers, snow peas, and carrots, season with soy sauce." },
-        { meal: "Seared scallops with spinach", recipe: "Sear scallops in a hot pan, serve with sautéed spinach and garlic." },
-        { meal: "Sushi rolls with avocado", recipe: "Prepare sushi rolls with seaweed, sushi rice, avocado, and optional fillings like cucumber or cooked shrimp." }
-    ],
-    vegan: [
-        { meal: "Smoothie bowl with fruits", recipe: "Blend frozen fruits with plant-based milk, pour into a bowl, top with granola, nuts, and seeds." },
-        { meal: "Avocado toast", recipe: "Toast bread, spread mashed avocado on top, sprinkle with salt and pepper, drizzle with olive oil." },
-        { meal: "Chia pudding with almond milk", recipe: "Mix chia seeds with almond milk, sweeten with agave or maple syrup, refrigerate until thickened." },
-        { meal: "Vegan pancakes", recipe: "Combine flour, plant-based milk, and baking powder to make batter. Cook pancakes on a griddle, serve with syrup." },
-        { meal: "Tofu scramble", recipe: "Crumble tofu, stir-fry with vegetables like spinach, onions, and bell peppers, season with turmeric and nutritional yeast." },
-        { meal: "Fruit salad", recipe: "Combine fresh fruits like berries, melons, and citrus fruits, optionally drizzle with a citrus dressing." }
-    ],
-    paleo: [
-        { meal: "Sweet potato hash with eggs", recipe: "Dice sweet potatoes, sauté with onions and bell peppers until tender, serve with fried or scrambled eggs." },
-        { meal: "Smoothie with almond milk and spinach", recipe: "Blend almond milk, spinach, and frozen fruits until smooth, optionally add protein powder." },
-        { meal: "Berries with coconut cream", recipe: "Serve fresh berries with coconut cream, optionally sweeten with honey or maple syrup." },
-        { meal: "Almond flour pancakes", recipe: "Combine almond flour, eggs, and almond milk to make batter. Cook pancakes on a griddle, serve with berries." },
-        { meal: "Scrambled eggs with avocado", recipe: "Scramble eggs, serve with sliced avocado, sprinkle with salt and pepper." }
-    ],
-    vegetarian: [
-        { meal: "Greek yogurt with honey and nuts", recipe: "Mix Greek yogurt with honey, top with nuts like almonds or walnuts." },
-        { meal: "Avocado toast", recipe: "Toast bread, spread mashed avocado on top, sprinkle with salt and pepper, drizzle with olive oil." },
-        { meal: "Fruit smoothie", recipe: "Blend fresh fruits with yogurt or plant-based milk until smooth, optionally add honey or agave syrup." },
-        { meal: "Vegetable omelette", recipe: "Whisk eggs, sautéed vegetables like bell peppers and mushrooms, cook in a pan until eggs are set." },
-        { meal: "Whole grain toast with peanut butter", recipe: "Toast whole grain bread, spread with peanut butter, optionally top with sliced bananas or berries." }
-    ],
-    glutenFree: [
-        { meal: "Smoothie bowl with fruits", recipe: "Blend frozen fruits with yogurt or plant-based milk, pour into a bowl, top with gluten-free granola and nuts." },
-        { meal: "Oatmeal with almond milk", recipe: "Cook gluten-free oats with almond milk, top with fresh berries and a drizzle of honey." },
-        { meal: "Greek yogurt with berries", recipe: "Mix Greek yogurt with fresh berries like strawberries, blueberries, and raspberries, add a drizzle of honey." },
-        { meal: "Eggs and bacon", recipe: "Fry bacon until crispy, cook eggs as desired (scrambled, fried, or poached)." },
-        { meal: "Rice cakes with avocado", recipe: "Spread mashed avocado on top of rice cakes, sprinkle with salt and pepper." }
+    diabetic: [
+        { meal: "Oatmeal with berries", recipe: "Cook 1/2 cup oats with 1 cup water. Add 1/2 cup fresh berries and 1 tablespoon ground flaxseed." },
+        { meal: "Greek yogurt with nuts", recipe: "Mix 1 cup Greek yogurt with 1/4 cup nuts like almonds or walnuts. Add a sprinkle of cinnamon." },
+        { meal: "Vegetable omelette", recipe: "Whisk 2 eggs and pour into a hot pan. Add 1/4 cup diced tomatoes, bell peppers, and spinach. Cook until eggs are set." },
+        { meal: "Smoothie with spinach", recipe: "Blend 1 cup spinach, 1/2 cup frozen berries, 1/2 banana, and 1 cup almond milk until smooth." },
+        { meal: "Avocado and egg", recipe: "Slice 1 avocado in half and remove the pit. Fill with 1 boiled egg, diced, and sprinkle with salt and pepper." },
+        { meal: "Whole grain toast with peanut butter", recipe: "Toast 1 slice of whole grain bread and spread with 2 tablespoons peanut butter. Top with sliced bananas or berries." },
+        { meal: "Cottage cheese with fruit", recipe: "Mix 1 cup cottage cheese with 1/2 cup fresh berries or sliced peaches." },
+        { meal: "Chia pudding with berries", recipe: "Mix 3 tablespoons chia seeds with 1 cup almond milk and 1/2 teaspoon vanilla extract. Refrigerate overnight and top with fresh berries." },
+        { meal: "Breakfast burrito", recipe: "Scramble 2 eggs with 1/4 cup diced bell peppers and onions. Wrap in a whole grain tortilla with salsa." },
+        { meal: "Quinoa breakfast bowl", recipe: "Cook 1/2 cup quinoa with 1 cup water. Top with 1/4 cup nuts, 1/4 cup dried fruits, and a drizzle of honey." },
+        { meal: "Egg and vegetable muffin", recipe: "Whisk 6 eggs and pour into muffin tins. Add diced vegetables like spinach, tomatoes, and bell peppers. Bake at 350°F for 20 minutes." },
+        { meal: "Cinnamon apple oats", recipe: "Cook 1/2 cup oats with 1 cup water and 1 diced apple. Add 1 teaspoon cinnamon." },
+        { meal: "Smoothie bowl with nuts", recipe: "Blend 1/2 cup frozen berries, 1/2 banana, and 1 cup almond milk until smooth. Pour into a bowl and top with nuts and seeds." },
+        { meal: "Veggie scramble", recipe: "Scramble 2 eggs with 1/4 cup diced bell peppers, onions, and spinach." },
+        { meal: "Whole grain cereal with milk", recipe: "Serve 1 cup whole grain cereal with 1 cup milk and top with fresh berries." },
+        { meal: "Berry parfait", recipe: "Layer 1 cup Greek yogurt with 1/2 cup fresh berries and 1/4 cup nuts." },
+        { meal: "Turkey and avocado toast", recipe: "Toast 1 slice of whole grain bread. Top with 2 slices of turkey and 1/2 avocado, mashed." },
+        { meal: "Protein smoothie", recipe: "Blend 1 scoop protein powder, 1/2 banana, 1 tablespoon peanut butter, and 1 cup almond milk until smooth." },
+        { meal: "Vegetable frittata", recipe: "Whisk 4 eggs and pour into a hot pan. Add 1/2 cup diced vegetables like spinach, tomatoes, and bell peppers. Cook until eggs are set." },
+        { meal: "Pumpkin oatmeal", recipe: "Cook 1/2 cup oats with 1 cup water and 1/4 cup canned pumpkin. Add 1 teaspoon pumpkin pie spice and a drizzle of honey." }
     ]
 };
 
 const lunchOptions = {
     standard: [
-        { meal: "Grilled chicken salad", recipe: "Grill chicken breasts, slice and serve over mixed greens with tomatoes, cucumbers, and dressing." },
-        { meal: "Quinoa and vegetable stir-fry", recipe: "Cook quinoa, stir-fry with mixed vegetables like bell peppers, broccoli, and carrots." },
-        { meal: "Caprese sandwich", recipe: "Layer slices of tomato, mozzarella cheese, and basil leaves between slices of bread, drizzle with balsamic glaze." },
-        { meal: "Sushi rolls", recipe: "Prepare sushi rolls with seaweed, sushi rice, and fillings like cucumber, avocado, or cooked shrimp." },
-        { meal: "Burrito bowl", recipe: "Layer rice, black beans, grilled chicken or beef, salsa, avocado, and sour cream in a bowl." },
-        { meal: "Pasta with tomato sauce", recipe: "Cook pasta, toss with tomato sauce made from tomatoes, garlic, and herbs, optionally top with grated cheese." }
+        { meal: "Grilled chicken salad", recipe: "Grill 1 chicken breast and slice. Serve over mixed greens with 1/2 cup cherry tomatoes, 1/4 cup cucumbers, and dressing." },
+        { meal: "Quinoa and vegetable stir-fry", recipe: "Cook 1 cup quinoa. Stir-fry with 1 cup mixed vegetables like bell peppers, broccoli, and carrots." },
+        { meal: "Turkey and cheese sandwich", recipe: "Layer 2 slices of turkey, 1 slice of cheese, 2 slices of lettuce, and 1 slice of tomato between 2 slices of bread. Add condiments." },
+        { meal: "Vegetable soup", recipe: "Simmer 2 cups mixed vegetables like carrots, celery, and potatoes in 4 cups vegetable broth. Season with herbs." },
+        { meal: "Pasta with marinara sauce", recipe: "Cook 2 cups pasta. Toss with 1 cup marinara sauce made from tomatoes, garlic, and basil." },
+        { meal: "Chicken Caesar wrap", recipe: "Grill 1 chicken breast and slice. Wrap with 1 cup lettuce, 2 tablespoons Parmesan cheese, and 2 tablespoons Caesar dressing in a tortilla." },
+        { meal: "Tuna salad", recipe: "Mix 1 can tuna with 2 tablespoons mayonnaise, 1/4 cup diced celery, and 1/4 cup diced onions. Serve on a bed of lettuce or in a sandwich." },
+        { meal: "Veggie wrap", recipe: "Spread 2 tablespoons hummus on a tortilla. Add 1/2 cup sliced bell peppers, cucumbers, and carrots. Roll up." },
+        { meal: "Chicken and rice", recipe: "Grill 1 chicken breast and slice. Serve with 1 cup cooked rice and 1/2 cup steamed broccoli." },
+        { meal: "Egg salad sandwich", recipe: "Mix 2 boiled eggs, diced, with 2 tablespoons mayonnaise and 1/4 cup diced celery. Serve on whole grain bread." },
+        { meal: "Grilled cheese sandwich", recipe: "Layer 2 slices of cheese between 2 slices of bread. Cook in a pan until cheese is melted and bread is golden brown." },
+        { meal: "Lentil soup", recipe: "Simmer 1 cup lentils with 4 cups vegetable broth, 1 diced carrot, 1 diced celery stalk, and 1 diced onion. Season with herbs." },
+        { meal: "Caprese salad", recipe: "Layer 1 cup sliced tomatoes, 1/2 cup sliced mozzarella cheese, and fresh basil leaves. Drizzle with olive oil and balsamic vinegar." },
+        { meal: "Chicken noodle soup", recipe: "Simmer 1 cup cooked chicken, 2 cups chicken broth, 1 cup noodles, and 1/2 cup mixed vegetables until heated through." },
+        { meal: "BLT sandwich", recipe: "Layer 2 slices of cooked bacon, 1 slice of lettuce, and 1 slice of tomato between 2 slices of bread. Add mayonnaise if desired." },
+        { meal: "Falafel wrap", recipe: "Prepare falafel from chickpeas. Wrap in a tortilla with 1/2 cup sliced vegetables and 2 tablespoons tahini sauce." },
+        { meal: "Sushi rolls", recipe: "Prepare sushi rolls with 1 sheet of seaweed, 1 cup sushi rice, and fillings like cucumber, avocado, and cooked fish." },
+        { meal: "Chicken salad", recipe: "Mix 1 cup cooked, diced chicken with 1/4 cup diced celery, 1/4 cup diced apples, and 2 tablespoons mayonnaise. Serve on a bed of lettuce." },
+        { meal: "Shrimp salad", recipe: "Mix 1 cup cooked shrimp with 1/4 cup diced celery, 1/4 cup diced bell peppers, and 2 tablespoons mayonnaise. Serve on a bed of lettuce." },
+        { meal: "Ham and cheese sandwich", recipe: "Layer 2 slices of ham, 1 slice of cheese, 2 slices of lettuce, and 1 slice of tomato between 2 slices of bread. Add condiments." }
     ],
-    keto: [
-        { meal: "Chicken Caesar salad (no croutons)", recipe: "Grill or roast chicken breasts, slice and serve over romaine lettuce with Caesar dressing." },
-        { meal: "Avocado and chicken lettuce wraps", recipe: "Fill lettuce leaves with sliced avocado, grilled chicken, and ranch dressing." },
-        { meal: "Beef and broccoli stir-fry", recipe: "Stir-fry beef strips with broccoli and garlic in a skillet, season with soy sauce and sesame oil." },
-        { meal: "Eggplant parmesan", recipe: "Bread and bake eggplant slices, layer with marinara sauce and mozzarella cheese, bake until cheese melts." },
-        { meal: "Cobb salad with ranch dressing", recipe: "Combine mixed greens, grilled chicken, bacon, hard-boiled eggs, avocado, tomatoes, and blue cheese, drizzle with ranch dressing." }
-    ],
-    mediterranean: [
-        { meal: "Greek salad with grilled chicken", recipe: "Grill chicken breasts, slice and serve over Greek salad with tomatoes, cucumbers, olives, feta cheese, and Greek dressing." },
-        { meal: "Falafel wrap", recipe: "Prepare falafel patties, wrap in pita bread with lettuce, tomatoes, cucumbers, and tahini sauce." },
-        { meal: "Tabbouleh salad", recipe: "Combine bulgur wheat, parsley, tomatoes, onions, and mint, dress with lemon juice and olive oil." },
-        { meal: "Mediterranean vegetable couscous", recipe: "Cook couscous, toss with roasted vegetables like zucchini, bell peppers, and chickpeas." },
-        { meal: "Stuffed bell peppers", recipe: "Fill bell peppers with a mixture of rice, tomatoes, onions, and herbs, bake until peppers are tender." },
-        { meal: "Lentil soup", recipe: "Cook lentils with onions, carrots, celery, and tomatoes in vegetable broth, season with cumin and coriander." }
-    ],
-    carnivore: [
-        { meal: "Beef steak with mashed potatoes", recipe: "Grill or pan-sear steak to desired doneness, serve with mashed potatoes and gravy." },
-        { meal: "Pulled pork sandwich", recipe: "Slow-cook pork shoulder until tender, shred and serve on sandwich buns with coleslaw." },
-        { meal: "Bacon and cheese burger", recipe: "Grill beef patties, serve on burger buns with bacon, cheese, lettuce, tomato, and condiments." },
-        { meal: "Beef kebabs with salad", recipe: "Skewer beef cubes with vegetables like onions and bell peppers, grill until beef is cooked through, serve with salad." },
-        { meal: "Roast chicken with vegetables", recipe: "Roast whole chicken with root vegetables like potatoes, carrots, and onions, season with herbs and lemon." }
-    ],
-    lowCarb: [
-        { meal: "Turkey lettuce wraps", recipe: "Fill lettuce leaves with sliced turkey, avocado, cheese, and mayo." },
-        { meal: "Cauliflower crust pizza", recipe: "Make pizza crust from cauliflower, top with sauce, cheese, and toppings, bake until cheese is melted." },
-        { meal: "Salmon and avocado salad", recipe: "Grill or bake salmon fillets, serve over mixed greens with avocado, cucumber, and lemon vinaigrette." },
-        { meal: "Egg salad with lettuce wraps", recipe: "Mix chopped hard-boiled eggs with mayo and mustard, serve in lettuce wraps." },
-        { meal: "Shrimp and avocado bowl", recipe: "Grill or sauté shrimp, serve with sliced avocado over a bed of mixed greens, drizzle with olive oil and lemon juice." }
-    ],
-    pescatarian: [
-        { meal: "Tuna salad sandwich", recipe: "Mix canned tuna with mayo, serve on whole grain bread with lettuce and tomato." },
-        { meal: "Seared tuna salad", recipe: "Sear tuna steaks, slice and serve over mixed greens with soy-ginger dressing." },
-        { meal: "Fish tacos with slaw", recipe: "Grill or bake fish fillets, serve in tortillas with cabbage slaw and avocado." },
-        { meal: "Grilled shrimp skewers with quinoa", recipe: "Skewer shrimp with vegetables, grill until shrimp are pink, serve with quinoa." },
-        { meal: "Seafood paella", recipe: "Cook rice with seafood like shrimp, mussels, and calamari, season with saffron and paprika." }
-    ],
-    vegan: [
-        { meal: "Quinoa salad with chickpeas", recipe: "Cook quinoa, toss with chickpeas, chopped vegetables like cucumbers and tomatoes, dress with lemon vinaigrette." },
-        { meal: "Vegan burrito bowl", recipe: "Layer rice, black beans, grilled vegetables, salsa, guacamole, and corn in a bowl." },
-        { meal: "Lentil soup", recipe: "Cook lentils with onions, carrots, celery, and tomatoes in vegetable broth, season with cumin and coriander." },
-        { meal: "Grilled veggie sandwich", recipe: "Grill vegetables like zucchini, bell peppers, and eggplant, serve on whole grain bread with hummus." },
-        { meal: "Vegan sushi rolls", recipe: "Prepare sushi rolls with seaweed, sushi rice, and fillings like cucumber, avocado, or marinated tofu." },
-        { meal: "Falafel wrap", recipe: "Prepare falafel patties, wrap in pita bread with lettuce, tomatoes, cucumbers, and tahini sauce." }
-    ],
-    paleo: [
-        { meal: "Grilled chicken with avocado", recipe: "Grill chicken breasts, serve with sliced avocado and a side of steamed vegetables." },
-        { meal: "Salmon salad with mixed greens", recipe: "Grill or bake salmon fillets, serve over mixed greens with tomatoes, cucumbers, and lemon vinaigrette." },
-        { meal: "Turkey lettuce wraps", recipe: "Fill lettuce leaves with sliced turkey, avocado, and veggies." },
-        { meal: "Zucchini noodles with pesto", recipe: "Spiralize zucchini into noodles, toss with pesto sauce made from basil, pine nuts, and olive oil." },
-        { meal: "Stuffed bell peppers", recipe: "Fill bell peppers with a mixture of ground meat, tomatoes, onions, and herbs, bake until peppers are tender." }
-    ],
-    vegetarian: [
-        { meal: "Vegetable stir-fry with tofu", recipe: "Stir-fry tofu with vegetables like bell peppers, broccoli, and carrots, season with soy sauce and sesame oil." },
-        { meal: "Caprese salad", recipe: "Layer slices of tomato, mozzarella cheese, and basil leaves. Drizzle with olive oil and balsamic vinegar." },
-        { meal: "Minestrone soup", recipe: "Cook vegetables like carrots, celery, and tomatoes in vegetable broth, add pasta and beans, season with Italian herbs." },
-        { meal: "Veggie burger", recipe: "Grill or bake veggie patties, serve on whole grain buns with lettuce, tomato, and condiments." },
-        { meal: "Stuffed mushrooms", recipe: "Fill mushrooms with a mixture of breadcrumbs, cheese, and herbs, bake until mushrooms are tender." }
-    ],
-    glutenFree: [
-        { meal: "Grilled chicken salad", recipe: "Grill chicken breasts, slice and serve over mixed greens with tomatoes, cucumbers, and dressing." },
-        { meal: "Quinoa and vegetable stir-fry", recipe: "Cook quinoa, stir-fry with mixed vegetables like bell peppers, broccoli, and carrots." },
-        { meal: "Gluten-free pasta with marinara", recipe: "Cook gluten-free pasta, toss with marinara sauce made from tomatoes, garlic, and herbs, optionally top with grated cheese." },
-        { meal: "Rice and beans", recipe: "Cook rice and beans, season with herbs and spices, serve as a side dish or main course." },
-        { meal: "Turkey and avocado wrap", recipe: "Fill gluten-free wrap with sliced turkey, avocado, lettuce, and tomato, optionally add mayo or mustard." }
+    diabetic: [
+        { meal: "Grilled chicken and vegetable salad", recipe: "Grill 1 chicken breast and slice. Serve over mixed greens with 1/2 cup cherry tomatoes, 1/4 cup cucumbers, and 1/4 cup bell peppers. Add a light vinaigrette." },
+        { meal: "Quinoa and black bean salad", recipe: "Cook 1 cup quinoa and mix with 1 cup black beans, 1/2 cup diced tomatoes, 1/4 cup diced bell peppers, and 1/4 cup corn. Add lime juice and cilantro." },
+        { meal: "Turkey and avocado sandwich", recipe: "Layer 2 slices of turkey, 1/2 sliced avocado, 2 slices of lettuce, and 1 slice of tomato between 2 slices of whole grain bread." },
+        { meal: "Vegetable soup with beans", recipe: "Simmer 2 cups mixed vegetables like carrots, celery, and zucchini with 4 cups vegetable broth and 1 cup beans. Season with herbs." },
+        { meal: "Whole wheat pasta with marinara sauce", recipe: "Cook 2 cups whole wheat pasta. Toss with 1 cup marinara sauce made from tomatoes, garlic, and basil." },
+        { meal: "Chicken and vegetable stir-fry", recipe: "Stir-fry 1 sliced chicken breast with 1 cup mixed vegetables like bell peppers, broccoli, and snap peas. Season with soy sauce." },
+        { meal: "Tuna and white bean salad", recipe: "Mix 1 can tuna with 1 cup white beans, 1/4 cup diced tomatoes, 1/4 cup diced bell peppers, and 1/4 cup red onions. Drizzle with olive oil and vinegar." },
+        { meal: "Veggie wrap with hummus", recipe: "Spread 2 tablespoons hummus on a whole grain tortilla. Add 1/2 cup sliced bell peppers, cucumbers, and carrots. Roll up." },
+        { meal: "Chicken and quinoa", recipe: "Grill 1 chicken breast and slice. Serve with 1 cup cooked quinoa and 1/2 cup steamed broccoli." },
+        { meal: "Egg salad on lettuce", recipe: "Mix 2 boiled eggs, diced, with 2 tablespoons mayonnaise and 1/4 cup diced celery. Serve on a bed of lettuce." },
+        { meal: "Grilled cheese with tomato soup", recipe: "Layer 2 slices of cheese between 2 slices of whole grain bread. Cook in a pan until cheese is melted and bread is golden brown. Serve with a cup of tomato soup." },
+        { meal: "Lentil and vegetable soup", recipe: "Simmer 1 cup lentils with 4 cups vegetable broth, 1 diced carrot, 1 diced celery stalk, and 1 diced onion. Season with herbs." },
+        { meal: "Caprese salad with avocado", recipe: "Layer 1 cup sliced tomatoes, 1/2 cup sliced mozzarella cheese, fresh basil leaves, and 1/2 sliced avocado. Drizzle with olive oil and balsamic vinegar." },
+        { meal: "Chicken and vegetable soup", recipe: "Simmer 1 cup cooked chicken, 2 cups chicken broth, 1 cup whole grain noodles, and 1/2 cup mixed vegetables until heated through." },
+        { meal: "BLT with avocado", recipe: "Layer 2 slices of cooked bacon, 1 slice of lettuce, 1 slice of tomato, and 1/2 sliced avocado between 2 slices of whole grain bread. Add mayonnaise if desired." },
+        { meal: "Falafel and vegetable wrap", recipe: "Prepare falafel from chickpeas. Wrap in a whole grain tortilla with 1/2 cup sliced vegetables and 2 tablespoons tahini sauce." },
+        { meal: "Sushi rolls with brown rice", recipe: "Prepare sushi rolls with 1 sheet of seaweed, 1 cup brown sushi rice, and fillings like cucumber, avocado, and cooked fish." },
+        { meal: "Chicken and apple salad", recipe: "Mix 1 cup cooked, diced chicken with 1/4 cup diced celery, 1/4 cup diced apples, and 2 tablespoons mayonnaise. Serve on a bed of lettuce." },
+        { meal: "Shrimp and avocado salad", recipe: "Mix 1 cup cooked shrimp with 1/2 sliced avocado, 1/4 cup diced bell peppers, and 2 tablespoons olive oil. Serve on a bed of lettuce." },
+        { meal: "Ham and vegetable sandwich", recipe: "Layer 2 slices of ham, 1/2 sliced avocado, 2 slices of lettuce, and 1 slice of tomato between 2 slices of whole grain bread. Add condiments." }
     ]
 };
+
 const dinnerOptions = {
     standard: [
-        { meal: "Salmon with roasted vegetables", recipe: "Season salmon fillets with salt, pepper, and herbs, roast in the oven with vegetables like broccoli, carrots, and potatoes." },
-        { meal: "Vegetarian lasagna", recipe: "Layer lasagna noodles with marinara sauce, ricotta cheese, spinach, and mozzarella, bake until cheese is melted and bubbly." },
-        { meal: "Teriyaki chicken with rice", recipe: "Marinate chicken in teriyaki sauce, grill or bake until cooked through, serve with steamed rice and steamed vegetables." },
-        { meal: "Steak and mashed potatoes", recipe: "Grill or pan-sear steak to desired doneness, serve with mashed potatoes made with butter, milk, and seasonings." },
-        { meal: "Shrimp tacos", recipe: "Season shrimp with taco seasoning, sauté until cooked, serve in taco shells with shredded lettuce, diced tomatoes, and salsa." },
-        { meal: "Pizza margherita", recipe: "Spread pizza dough with marinara sauce, top with fresh mozzarella slices and basil leaves, bake until crust is golden and cheese is melted." }
+        { meal: "Spaghetti and meatballs", recipe: "Cook 2 cups spaghetti. Prepare meatballs from 1 pound ground beef, 1/2 cup breadcrumbs, 1 egg, and seasonings. Combine with marinara sauce." },
+        { meal: "Grilled steak with mashed potatoes", recipe: "Grill 1 steak to desired doneness. Serve with 1 cup mashed potatoes and 1/2 cup steamed vegetables." },
+        { meal: "Chicken Alfredo", recipe: "Cook 2 cups fettuccine. Prepare Alfredo sauce from 1 cup cream, 1/2 cup butter, and 1 cup Parmesan cheese. Add grilled chicken." },
+        { meal: "Fish and chips", recipe: "Fry 2 fish fillets. Serve with homemade potato fries and 1/4 cup tartar sauce." },
+        { meal: "Vegetable stir-fry with rice", recipe: "Stir-fry 2 cups mixed vegetables with soy sauce. Serve over 2 cups steamed rice." },
+        { meal: "Beef tacos", recipe: "Cook 1 pound ground beef with taco seasoning. Serve in tortillas with lettuce, cheese, and salsa." },
+        { meal: "Chicken Parmesan", recipe: "Bread and fry 2 chicken breasts. Top with marinara sauce and mozzarella cheese. Serve with spaghetti." },
+        { meal: "Baked salmon with quinoa", recipe: "Bake 2 salmon fillets. Serve with 1 cup cooked quinoa and 1/2 cup steamed broccoli." },
+        { meal: "Stuffed bell peppers", recipe: "Stuff 2 bell peppers with a mixture of 1 cup ground beef, 1 cup rice, and 1/2 cup cheese. Bake until tender." },
+        { meal: "Shrimp scampi", recipe: "Cook 1 pound shrimp with garlic and butter. Serve over 2 cups cooked linguine." },
+        { meal: "Chicken stir-fry", recipe: "Stir-fry 1 sliced chicken breast with 2 cups mixed vegetables and soy sauce. Serve over 2 cups steamed rice." },
+        { meal: "Vegetable lasagna", recipe: "Layer lasagna noodles with a mixture of 2 cups ricotta cheese, 1 cup spinach, and 1 cup marinara sauce. Top with mozzarella cheese and bake." },
+        { meal: "Pork chops with applesauce", recipe: "Grill 2 pork chops. Serve with 1/2 cup applesauce and 1/2 cup steamed green beans." },
+        { meal: "Beef stew", recipe: "Simmer 1 pound beef cubes with 2 cups beef broth, 1 cup diced potatoes, 1 cup diced carrots, and seasonings until tender." },
+        { meal: "Chicken curry with rice", recipe: "Cook 1 sliced chicken breast with 1 cup curry sauce. Serve over 2 cups steamed rice." },
+        { meal: "Vegetable soup with bread", recipe: "Simmer 2 cups mixed vegetables with 4 cups vegetable broth. Serve with crusty bread." },
+        { meal: "Spaghetti carbonara", recipe: "Cook 2 cups spaghetti. Toss with a mixture of 1/2 cup cooked bacon, 2 eggs, and 1 cup Parmesan cheese." },
+        { meal: "Beef stroganoff", recipe: "Cook 1 pound beef strips with 1 cup mushrooms and 1 cup sour cream. Serve over 2 cups egg noodles." },
+        { meal: "Chicken enchiladas", recipe: "Roll 1 cup shredded chicken and 1/2 cup cheese in tortillas. Top with enchilada sauce and bake." },
+        { meal: "Baked ziti", recipe: "Mix 2 cups cooked ziti with 1 cup ricotta cheese, 1 cup marinara sauce, and 1 cup mozzarella cheese. Bake until bubbly." }
     ],
-    keto: [
-        { meal: "Grilled salmon with broccoli", recipe: "Season salmon fillets with salt, pepper, and olive oil, grill until cooked through, serve with steamed broccoli." },
-        { meal: "Zucchini noodles with pesto", recipe: "Spiralize zucchini into noodles, toss with pesto sauce made from basil, pine nuts, and olive oil." },
-        { meal: "Stuffed bell peppers (keto version)", recipe: "Fill bell peppers with ground beef or turkey, cauliflower rice, and cheese, bake until peppers are tender and cheese is melted." },
-        { meal: "Baked chicken thighs with cauliflower mash", recipe: "Season chicken thighs, bake until cooked through, serve with mashed cauliflower made with butter, cream, and seasonings." },
-        { meal: "Keto beef stir-fry", recipe: "Stir-fry beef strips with low-carb vegetables like bell peppers, broccoli, and mushrooms, season with soy sauce and garlic." }
-    ],
-    mediterranean: [
-        { meal: "Mediterranean baked cod", recipe: "Season cod fillets with herbs, lemon juice, and olive oil, bake until fish flakes easily with a fork." },
-        { meal: "Ratatouille with chickpeas", recipe: "Cook eggplant, zucchini, bell peppers, and tomatoes with chickpeas and herbs until vegetables are tender." },
-        { meal: "Lamb chops with couscous", recipe: "Grill or roast lamb chops with herbs and spices, serve with couscous cooked with vegetables and dried fruits." },
-        { meal: "Greek lemon chicken", recipe: "Marinate chicken in lemon juice, garlic, and oregano, bake until chicken is tender and juicy." },
-        { meal: "Moussaka", recipe: "Layer eggplant, ground lamb or beef, tomatoes, and béchamel sauce, bake until golden and bubbly." },
-        { meal: "Spinach and feta pie", recipe: "Layer phyllo dough with spinach, feta cheese, and herbs, bake until golden and crisp." }
-    ],
-    carnivore: [
-        { meal: "Ribeye steak with baked potatoes", recipe: "Season ribeye steak with salt and pepper, grill or pan-sear to desired doneness, serve with baked potatoes." },
-        { meal: "Pork ribs with coleslaw", recipe: "Rub pork ribs with barbecue seasoning, bake until tender, serve with coleslaw." },
-        { meal: "Beef brisket with roasted vegetables", recipe: "Slow-cook beef brisket with herbs and spices until tender, serve with roasted vegetables." },
-        { meal: "Lamb chops with mint sauce", recipe: "Grill or roast lamb chops, serve with mint sauce and roasted potatoes." },
-        { meal: "Chicken wings with BBQ sauce", recipe: "Bake or grill chicken wings until crispy, toss in barbecue sauce, serve with celery sticks and ranch dressing." }
-    ],
-    lowCarb: [
-        { meal: "Cauliflower crust pizza with toppings", recipe: "Make pizza crust with cauliflower, cheese, and eggs, top with sauce, cheese, and toppings, bake until crust is crispy and cheese is melted." },
-        { meal: "Stuffed mushrooms with sausage and cheese", recipe: "Fill mushroom caps with sausage, cheese, and breadcrumbs, bake until mushrooms are tender and filling is bubbly." },
-        { meal: "Chicken and vegetable stir-fry", recipe: "Stir-fry chicken strips with low-carb vegetables like bell peppers, broccoli, and snap peas, season with soy sauce and ginger." },
-        { meal: "Beef stew with cauliflower", recipe: "Cook beef stew meat with onions, carrots, and celery in broth, add cauliflower florets, simmer until beef is tender and cauliflower is cooked." },
-        { meal: "Grilled chicken with salad", recipe: "Grill chicken breasts, serve over mixed greens with tomatoes, cucumbers, and dressing." }
-    ],
-    pescatarian: [
-        { meal: "Baked cod with lemon and herbs", recipe: "Season cod fillets with lemon juice, garlic, and herbs, bake until fish flakes easily with a fork." },
-        { meal: "Shrimp scampi with zoodles", recipe: "Sauté shrimp with garlic, lemon juice, and butter, serve over zucchini noodles (zoodles)." },
-        { meal: "Grilled swordfish with quinoa", recipe: "Grill swordfish steaks, serve with cooked quinoa seasoned with herbs and lemon juice." },
-        { meal: "Tofu and vegetable stir-fry", recipe: "Stir-fry tofu cubes with vegetables like bell peppers, snow peas, and carrots, season with soy sauce and sesame oil." },
-        { meal: "Vegetarian sushi rolls", recipe: "Prepare sushi rolls with seaweed, sushi rice, avocado, cucumber, and optional fillings like pickled radish or carrots." }
-    ],
-    vegan: [
-        { meal: "Vegan curry with rice", recipe: "Sauté onions, garlic, and spices, add vegetables like potatoes, carrots, and bell peppers, simmer in coconut milk, serve over rice." },
-        { meal: "Stuffed bell peppers", recipe: "Fill bell peppers with quinoa, black beans, corn, and tomatoes, bake until peppers are tender." },
-        { meal: "Spaghetti with marinara sauce", recipe: "Cook spaghetti pasta, toss with marinara sauce made from tomatoes, garlic, and herbs, optionally top with nutritional yeast." },
-        { meal: "Vegan chili", recipe: "Sauté onions, garlic, and chili peppers, add beans, tomatoes, and spices, simmer until flavors blend, serve with cornbread or rice." },
-        { meal: "Grilled tofu with veggies", recipe: "Marinate tofu in soy sauce and ginger, grill or bake until tofu is golden and vegetables are tender-crisp." },
-        { meal: "Vegan stir-fry", recipe: "Stir-fry tofu or tempeh with vegetables like broccoli, bell peppers, and snap peas, season with soy sauce and sesame oil." }
-    ],
-    paleo: [
-        { meal: "Grilled steak with sweet potatoes", recipe: "Season steak with salt and pepper, grill to desired doneness, serve with roasted sweet potatoes." },
-        { meal: "Baked salmon with asparagus", recipe: "Season salmon fillets with lemon juice and herbs, bake until fish flakes easily with a fork, serve with roasted asparagus." },
-        { meal: "Chicken stir-fry with vegetables", recipe: "Stir-fry chicken strips with vegetables like bell peppers, onions, and mushrooms, season with coconut aminos and garlic." },
-        { meal: "Stuffed acorn squash", recipe: "Roast acorn squash halves, fill with a mixture of ground turkey or beef, quinoa, and herbs, bake until squash is tender." },
-        { meal: "Lamb chops with roasted carrots", recipe: "Grill or roast lamb chops with herbs, serve with roasted carrots seasoned with olive oil and herbs." }
-    ],
-    vegetarian: [
-        { meal: "Vegetarian lasagna", recipe: "Layer lasagna noodles with marinara sauce, ricotta cheese, spinach, and mozzarella, bake until cheese is melted and bubbly." },
-        { meal: "Stuffed bell peppers", recipe: "Fill bell peppers with a mixture of rice, tomatoes, onions, and herbs, bake until peppers are tender." },
-        { meal: "Vegetable stir-fry with tofu", recipe: "Stir-fry tofu cubes with mixed vegetables like bell peppers, broccoli, and snap peas, season with soy sauce and garlic." },
-        { meal: "Eggplant parmesan", recipe: "Bread and bake eggplant slices, layer with marinara sauce and mozzarella cheese, bake until cheese melts and eggplant is tender." },
-        { meal: "Vegetable curry with rice", recipe: "Sauté onions, garlic, and curry paste, add vegetables like potatoes, carrots, and peas, simmer in coconut milk, serve over rice." }
-    ],
-    glutenFree: [
-        { meal: "Grilled chicken with vegetables", recipe: "Grill chicken breasts, serve with grilled or roasted vegetables seasoned with olive oil and herbs." },
-        { meal: "Baked fish with quinoa", recipe: "Season fish fillets with lemon juice and herbs, bake until fish flakes easily with a fork, serve with cooked quinoa." },
-        { meal: "Quinoa salad with vegetables", recipe: "Cook quinoa, toss with mixed vegetables like cucumbers, tomatoes, and bell peppers, drizzle with olive oil and lemon juice." },
-        { meal: "Eggs and avocado on toast", recipe: "Toast gluten-free bread, top with mashed avocado and fried or poached eggs, season with salt and pepper." },
-        { meal: "Chicken and vegetable soup", recipe: "Simmer chicken broth with diced chicken, carrots, celery, and onions, season with herbs and spices, optionally add gluten-free noodles." }
+    diabetic: [
+        { meal: "Grilled chicken with roasted vegetables", recipe: "Grill 1 chicken breast. Serve with 1 cup roasted vegetables like broccoli, carrots, and bell peppers." },
+        { meal: "Quinoa and black bean bowl", recipe: "Cook 1 cup quinoa and mix with 1 cup black beans, 1/2 cup diced tomatoes, 1/4 cup diced bell peppers, and 1/4 cup corn. Add lime juice and cilantro." },
+        { meal: "Turkey and vegetable stir-fry", recipe: "Stir-fry 1 cup sliced turkey breast with 2 cups mixed vegetables like bell peppers, broccoli, and snap peas. Season with soy sauce." },
+        { meal: "Vegetable soup with beans", recipe: "Simmer 2 cups mixed vegetables like carrots, celery, and zucchini with 4 cups vegetable broth and 1 cup beans. Season with herbs." },
+        { meal: "Whole wheat pasta with marinara sauce", recipe: "Cook 2 cups whole wheat pasta. Toss with 1 cup marinara sauce made from tomatoes, garlic, and basil." },
+        { meal: "Chicken and vegetable kebabs", recipe: "Skewer 1 sliced chicken breast with 2 cups mixed vegetables like bell peppers, onions, and zucchini. Grill until cooked." },
+        { meal: "Salmon with quinoa and broccoli", recipe: "Bake 2 salmon fillets. Serve with 1 cup cooked quinoa and 1/2 cup steamed broccoli." },
+        { meal: "Vegetable curry with brown rice", recipe: "Cook 1 cup mixed vegetables with 1 cup curry sauce. Serve over 2 cups steamed brown rice." },
+        { meal: "Chicken and vegetable soup", recipe: "Simmer 1 cup cooked chicken, 2 cups chicken broth, 1 cup whole grain noodles, and 1/2 cup mixed vegetables until heated through." },
+        { meal: "Stuffed bell peppers with quinoa", recipe: "Stuff 2 bell peppers with a mixture of 1 cup cooked quinoa, 1 cup black beans, and 1/2 cup diced tomatoes. Bake until tender." },
+        { meal: "Shrimp and vegetable stir-fry", recipe: "Stir-fry 1 pound shrimp with 2 cups mixed vegetables and soy sauce. Serve over 2 cups steamed brown rice." },
+        { meal: "Vegetable lasagna with whole wheat noodles", recipe: "Layer whole wheat lasagna noodles with a mixture of 2 cups ricotta cheese, 1 cup spinach, and 1 cup marinara sauce. Top with mozzarella cheese and bake." },
+        { meal: "Chicken and broccoli stir-fry", recipe: "Stir-fry 1 sliced chicken breast with 2 cups broccoli florets and soy sauce. Serve over 2 cups steamed brown rice." },
+        { meal: "Turkey chili", recipe: "Cook 1 pound ground turkey with 1 cup diced tomatoes, 1 cup kidney beans, and chili seasoning. Simmer until flavors blend." },
+        { meal: "Salmon with asparagus", recipe: "Bake 2 salmon fillets. Serve with roasted asparagus and a squeeze of lemon." },
+        { meal: "Vegetable quinoa pilaf", recipe: "Cook 1 cup quinoa and mix with 2 cups mixed vegetables like bell peppers, carrots, and peas. Season with herbs." },
+        { meal: "Turkey meatballs with zucchini noodles", recipe: "Prepare turkey meatballs with lean ground turkey, oats, and spices. Serve over spiralized zucchini noodles with marinara sauce." },
+        { meal: "Chicken and spinach salad", recipe: "Grill 1 chicken breast and slice. Serve over spinach with sliced strawberries, almonds, and a light vinaigrette." },
+        { meal: "Beef and vegetable stir-fry", recipe: "Stir-fry 1 cup sliced beef with 2 cups mixed vegetables like bell peppers, onions, and snap peas. Season with soy sauce." },
+        { meal: "Vegetarian stuffed peppers", recipe: "Stuff 2 bell peppers with a mixture of 1 cup quinoa, 1 cup black beans, diced tomatoes, and spices. Bake until peppers are tender." }
     ]
 };
 const snackOptions = {
     standard: [
-        { meal: "Mixed nuts", recipe: "Combine almonds, walnuts, and cashews, optionally roast with olive oil and sea salt." },
-        { meal: "Fruit smoothie", recipe: "Blend fresh fruits like bananas, strawberries, and oranges with yogurt or milk." },
-        { meal: "Cheese and crackers", recipe: "Serve sliced cheese with whole grain crackers." },
-        { meal: "Vegetable sticks with hummus", recipe: "Cut carrots, cucumbers, and bell peppers into sticks, serve with hummus." },
-        { meal: "Yogurt with granola", recipe: "Mix Greek yogurt with granola and honey." }
+        { snack: "Mixed nuts", description: "A handful of mixed nuts like almonds, walnuts, and cashews." },
+        { snack: "Fruit salad", description: "Mix together a variety of fresh fruits like apples, bananas, and oranges." },
+        { snack: "Hummus with vegetables", description: "Enjoy hummus with sliced bell peppers, cucumbers, and carrots." },
+        { snack: "Greek yogurt with honey", description: "Top Greek yogurt with a drizzle of honey and some granola." },
+        { snack: "Cheese and crackers", description: "Pair your favorite cheese with whole grain crackers." },
+        { snack: "Apple slices with peanut butter", description: "Slice an apple and enjoy with a tablespoon of peanut butter." },
+        { snack: "Smoothie with spinach", description: "Blend together spinach, banana, and almond milk for a refreshing smoothie." },
+        { snack: "Cottage cheese with pineapple", description: "Mix cottage cheese with fresh pineapple chunks." },
+        { snack: "Popcorn", description: "Air-pop some popcorn and season lightly with salt." },
+        { snack: "Rice cakes with avocado", description: "Spread avocado on rice cakes for a crunchy snack." },
+        { snack: "Trail mix", description: "Combine nuts, dried fruits, and a sprinkle of dark chocolate chips." },
+        { snack: "Yogurt parfait", description: "Layer yogurt with granola and fresh berries in a glass." },
+        { snack: "Vegetable sticks with ranch dip", description: "Slice cucumbers, carrots, and bell peppers to dip in ranch dressing." },
+        { snack: "Hard-boiled eggs", description: "Prepare hard-boiled eggs for a protein-packed snack." },
+        { snack: "Rice crackers with tuna", description: "Top rice crackers with canned tuna and a squeeze of lemon." },
+        { snack: "Cherry tomatoes with mozzarella", description: "Enjoy cherry tomatoes with bite-sized mozzarella cheese." },
+        { snack: "Pita chips with hummus", description: "Dip pita chips into your favorite hummus." },
+        { snack: "Banana with almond butter", description: "Spread almond butter on a banana for a quick energy boost." },
+        { snack: "Edamame", description: "Boil edamame pods and sprinkle with sea salt." },
+        { snack: "Cucumber slices with cream cheese", description: "Spread cream cheese on cucumber slices." }
     ],
-    keto: [
-        { meal: "Cheese crisps", recipe: "Bake cheese slices until crispy, let cool and serve." },
-        { meal: "Avocado with salt and pepper", recipe: "Slice avocado, sprinkle with salt and pepper." },
-        { meal: "Hard-boiled eggs", recipe: "Boil eggs until cooked through, peel and serve with salt and pepper." },
-        { meal: "Olives", recipe: "Serve a variety of olives, optionally marinated with herbs and olive oil." },
-        { meal: "Beef jerky", recipe: "Choose keto-friendly beef jerky without added sugars." }
-    ],
-    mediterranean: [
-        { meal: "Greek yogurt with honey and nuts", recipe: "Mix Greek yogurt with honey, top with nuts like almonds or walnuts." },
-        { meal: "Hummus with pita chips", recipe: "Serve hummus with whole grain pita chips." },
-        { meal: "Fruit salad with citrus dressing", recipe: "Combine fresh fruits like oranges, grapes, and pomegranate seeds, drizzle with lemon or orange juice." },
-        { meal: "Stuffed grape leaves (dolmas)", recipe: "Fill grape leaves with rice, pine nuts, and herbs, optionally serve with lemon wedges." },
-        { meal: "Tabbouleh salad", recipe: "Mix bulgur wheat, parsley, tomatoes, and onions, dress with lemon juice and olive oil." }
-    ],
-    carnivore: [
-        { meal: "Beef jerky", recipe: "Choose high-quality beef jerky without added sugars." },
-        { meal: "Chicken wings", recipe: "Bake or grill chicken wings, season with salt and pepper." },
-        { meal: "Sliced deli meat", recipe: "Serve sliced turkey or roast beef." },
-        { meal: "Hard-boiled eggs", recipe: "Boil eggs until cooked through, peel and serve with salt and pepper." },
-        { meal: "Cheese sticks", recipe: "Serve string cheese or cheese sticks." }
-    ],
-    lowCarb: [
-        { meal: "String cheese", recipe: "Serve string cheese or cheese sticks." },
-        { meal: "Celery sticks with peanut butter", recipe: "Spread peanut butter on celery sticks." },
-        { meal: "Cucumber slices with cream cheese", recipe: "Spread cream cheese on cucumber slices." },
-        { meal: "Almonds", recipe: "Serve raw or roasted almonds." },
-        { meal: "Cherry tomatoes with mozzarella", recipe: "Serve cherry tomatoes with fresh mozzarella balls." }
-    ],
-    pescatarian: [
-        { meal: "Seaweed snacks", recipe: "Serve roasted seaweed snacks." },
-        { meal: "Edamame", recipe: "Boil or steam edamame, sprinkle with sea salt." },
-        { meal: "Smoked salmon on cucumber slices", recipe: "Serve smoked salmon on cucumber slices." },
-        { meal: "Greek yogurt with berries", recipe: "Mix Greek yogurt with fresh berries like strawberries, blueberries, and raspberries." },
-        { meal: "Avocado slices with salt and pepper", recipe: "Slice avocado, sprinkle with salt and pepper." }
-    ],
-    vegan: [
-        { meal: "Fruit and nut mix", recipe: "Combine dried fruits like apricots and cranberries with nuts like almonds and cashews." },
-        { meal: "Guacamole with vegetable sticks", recipe: "Serve guacamole with carrot and celery sticks." },
-        { meal: "Chia pudding", recipe: "Mix chia seeds with almond milk, sweeten with agave or maple syrup, refrigerate until thickened." },
-        { meal: "Trail mix with seeds and dried fruits", recipe: "Combine pumpkin seeds, sunflower seeds, and dried fruits like raisins and cranberries." },
-        { meal: "Coconut yogurt with granola", recipe: "Mix coconut yogurt with granola and fresh berries." }
-    ],
-    paleo: [
-        { meal: "Mixed nuts", recipe: "Combine almonds, walnuts, and cashews, optionally roast with olive oil and sea salt." },
-        { meal: "Beef jerky", recipe: "Choose high-quality beef jerky without added sugars." },
-        { meal: "Hard-boiled eggs", recipe: "Boil eggs until cooked through, peel and serve with salt and pepper." },
-        { meal: "Guacamole with vegetable sticks", recipe: "Serve guacamole with carrot and celery sticks." },
-        { meal: "Fruit with almond butter", recipe: "Serve apple or banana slices with almond butter." }
-    ],
-    vegetarian: [
-        { meal: "Cheese and crackers", recipe: "Serve sliced cheese with whole grain crackers." },
-        { meal: "Hummus with cucumber slices", recipe: "Serve hummus with cucumber slices." },
-        { meal: "Caprese salad", recipe: "Layer slices of tomato, fresh mozzarella cheese, and basil leaves, drizzle with balsamic glaze." },
-        { meal: "Roasted chickpeas", recipe: "Season chickpeas with olive oil and spices, bake until crispy." },
-        { meal: "Fruit smoothie", recipe: "Blend fresh fruits like bananas, strawberries, and mango with yogurt or almond milk." }
-    ],
-    glutenFree: [
-        { meal: "Mixed nuts", recipe: "Combine almonds, walnuts, and cashews, optionally roast with olive oil and sea salt." },
-        { meal: "Rice cakes with almond butter", recipe: "Spread almond butter on rice cakes." },
-        { meal: "Yogurt with gluten-free granola", recipe: "Mix yogurt with gluten-free granola and fresh berries." },
-        { meal: "Vegetable sticks with hummus", recipe: "Cut carrots, cucumbers, and bell peppers into sticks, serve with hummus." },
-        { meal: "Apple slices with peanut butter", recipe: "Serve apple slices with peanut butter." }
+    diabetic: [
+        { snack: "Mixed nuts", description: "A handful of mixed nuts like almonds, walnuts, and cashews." },
+        { snack: "Berries with cottage cheese", description: "Pair fresh berries with cottage cheese." },
+        { snack: "Carrot sticks with hummus", description: "Enjoy carrot sticks with hummus for a crunchy snack." },
+        { snack: "Greek yogurt with almonds", description: "Top Greek yogurt with almonds and a sprinkle of cinnamon." },
+        { snack: "Cheese slices with apple", description: "Pair cheese slices with apple slices." },
+        { snack: "Sugar-free yogurt", description: "Choose a sugar-free yogurt with low glycemic index fruits." },
+        { snack: "Celery sticks with peanut butter", description: "Spread peanut butter on celery sticks." },
+        { snack: "Cherry tomatoes with mozzarella", description: "Enjoy cherry tomatoes with bite-sized mozzarella cheese." },
+        { snack: "Avocado with cottage cheese", description: "Slice avocado and serve with cottage cheese." },
+        { snack: "Hard-boiled eggs", description: "Prepare hard-boiled eggs for a protein-packed snack." },
+        { snack: "Almond butter on whole grain crackers", description: "Spread almond butter on whole grain crackers." },
+        { snack: "Sugar-free gelatin", description: "Enjoy a serving of sugar-free gelatin." },
+        { snack: "Pumpkin seeds", description: "Roast pumpkin seeds for a nutritious snack." },
+        { snack: "Cucumber slices with cream cheese", description: "Spread cream cheese on cucumber slices." },
+        { snack: "Turkey slices with cucumber", description: "Wrap turkey slices around cucumber sticks." },
+        { snack: "Whole grain toast with avocado", description: "Toast whole grain bread and top with avocado slices." },
+        { snack: "Edamame", description: "Boil edamame pods and sprinkle with sea salt." },
+        { snack: "Sugar-free applesauce", description: "Choose sugar-free applesauce cups." },
+        { snack: "Yogurt with chia seeds", description: "Mix yogurt with chia seeds and a drizzle of honey." },
+        { snack: "Seaweed snacks", description: "Enjoy roasted seaweed snacks for a savory treat." }
     ]
 };
 
-// Export the meal options for use in the website
-export { breakfastOptions, lunchOptions, dinnerOptions, snackOptions };
-
-document.getElementById('generateMealButton').addEventListener('click', generateMeal);
-
-function getRandomMeal(mealType, dietType) {
-    const options = {
-        breakfast: breakfastOptions,
-        lunch: lunchOptions,
-        dinner: dinnerOptions,
-        snack: snackOptions
-    };
-
-    if (!options[mealType] || !options[mealType][dietType]) {
-        return null;
-    }
-
-    const meals = options[mealType][dietType];
-    const randomIndex = Math.floor(Math.random() * meals.length);
-    return meals[randomIndex];
-}
-
-function generateMeal() {
-    const mealType = document.getElementById('mealType').value;
-    const dietType = document.getElementById('dietType').value;
-
-    if (!mealType || !dietType) {
-        alert('Please select both meal type and diet type');
-        return;
-    }
-
-    const meal = getRandomMeal(mealType, dietType);
-
-    if (meal) {
-        document.getElementById('mealSuggestion').innerHTML = `
-            <p><strong>Meal:</strong> ${meal.meal}</p>
-            <p><strong>Recipe:</strong> ${meal.recipe}</p>
-        `;
-    } else {
-        document.getElementById('mealSuggestion').innerHTML = `
-            <p>No meals found for the selected options.</p>
-        `;
-    }
-}
-
+// Export all meal options and snack options
+module.exports = {
+    breakfastOptions,
+    lunchOptions,
+    dinnerOptions,
+    snackOptions
+};
