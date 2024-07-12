@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Meal Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Random Meal Generator</h1>
+        <div class="dropdowns">
+            <label for="mealType">Select Meal Type:</label>
+            <select id="mealType">
+                <option value="">--Select Meal Type--</option>
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+                <option value="snack">Snack</option>
+            </select>
+            <label for="dietType">Select Diet Type:</label>
+            <select id="dietType">
+                <option value="">--Select Diet Type--</option>
+                <option value="standard">Standard</option>
+                <option value="keto">Keto</option>
+                <option value="mediterranean">Mediterranean</option>
+                <option value="carnivore">Carnivore</option>
+                <option value="lowCarb">Low Carb</option>
+                <option value="pescatarian">Pescatarian</option>
+                <option value="vegan">Vegan</option>
+                <option value="paleo">Paleo</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="glutenFree">Gluten Free</option>
+            </select>
+        </div>
+        <button id="generateMealButton">Generate Meal</button>
+        <div id="mealSuggestion" class="meal-suggestion"></div>
+    </div>
+
+    <script src="meals.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
